@@ -1,0 +1,182 @@
+:root {
+  --bg: #f6f6f4;
+  --panel: #ffffff;
+  --line: #ddd;
+  --text: #1f1f1f;
+  --muted: #666;
+  --tag-bg: #e9f6ef;
+  --tag-text: #0f766e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 900px;
+  min-height: 620px;
+  font-family: Inter, "PingFang SC", "Microsoft Yahei", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 620px;
+}
+
+.sidebar,
+.content {
+  padding: 20px;
+}
+
+.sidebar {
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+h1,
+h2,
+h3,
+ul,
+form {
+  margin: 0;
+  padding: 0;
+}
+
+h1 { font-size: 32px; }
+h2 { font-size: 14px; color: var(--muted); text-transform: uppercase; margin-bottom: 10px; }
+
+#searchInput,
+.tag-input,
+.tag-form button,
+.add-btn {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.library-item,
+.tag-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.library-item.active { background: #ededea; font-weight: 600; }
+
+.count {
+  background: #ececec;
+  color: #444;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.tag-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tag-row {
+  cursor: pointer;
+}
+
+.tag-row.active,
+.tag-row:hover {
+  background: #ededea;
+}
+
+.add-btn {
+  margin-top: auto;
+  background: #fff;
+  font-size: 24px;
+  text-align: left;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.bookmark-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.bookmark-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bookmark-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.bookmark-title {
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.bookmark-url {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.bookmark-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag-pill {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border-radius: 8px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.tag-form {
+  display: flex;
+  gap: 8px;
+}
+
+.tag-form button {
+  width: 84px;
+}
+
+.delete-btn {
+  border: none;
+  background: transparent;
+  color: #999;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.empty {
+  color: var(--muted);
+  padding: 16px;
+}

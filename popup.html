@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarks</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <h1>Bookmarks</h1>
+        <input id="searchInput" type="search" placeholder="Search..." />
+
+        <section>
+          <h2>Library</h2>
+          <div class="library-item active">
+            <span>All bookmarks</span>
+            <span id="totalCount" class="count">0</span>
+          </div>
+        </section>
+
+        <section>
+          <h2>Tags</h2>
+          <ul id="tagList" class="tag-list"></ul>
+        </section>
+
+        <button id="addCurrentBtn" class="add-btn">+ Add bookmark</button>
+      </aside>
+
+      <main class="content">
+        <header class="toolbar">
+          <h2>All bookmarks</h2>
+          <span id="resultCount"></span>
+        </header>
+        <section id="bookmarkList" class="bookmark-list"></section>
+      </main>
+    </div>
+
+    <template id="bookmarkCardTemplate">
+      <article class="bookmark-card">
+        <div class="bookmark-title-row">
+          <h3 class="bookmark-title"></h3>
+          <button class="delete-btn" title="删除">×</button>
+        </div>
+        <a class="bookmark-url" target="_blank" rel="noreferrer"></a>
+        <div class="bookmark-tags"></div>
+        <form class="tag-form">
+          <input class="tag-input" type="text" placeholder="输入标签，逗号分隔" />
+          <button type="submit">保存标签</button>
+        </form>
+      </article>
+    </template>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

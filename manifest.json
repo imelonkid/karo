@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Tag Bookmark Manager",
+  "description": "为 Chrome 书签提供标签管理、搜索和列表浏览能力。",
+  "version": "1.0.0",
+  "permissions": ["bookmarks", "storage", "tabs"],
+  "action": {
+    "default_title": "Tag Bookmark Manager",
+    "default_popup": "popup.html"
+  }
+}
